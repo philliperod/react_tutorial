@@ -1,17 +1,19 @@
+// creating your first component; to achieve that, you need two things:
+// 1) Import react dependency and
+// 2) A function
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// now you want to inject that component into your HTML file; use ReactDOM
+// which also had a render method
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Greeting() {
+  return <h4>Hello, World. This is first component.</h4>;
+}
+// for React to understand this is a component, you must capitalize the name of it
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<Greeting />, document.getElementById('root'));
+// this render method is looking for two things:
+// 1) what is the component that it will be rendering and
+// 2) where to render it
+// you MUST use a self-closing tag for the component
