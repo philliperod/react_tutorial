@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Props
+// Props Destructuring
 
-// setup variables
 const firstBook = {
   bookImage: 'https://m.media-amazon.com/images/I/81V8ozIJTVL._AC_UY436_FMwebp_QL65_.jpg',
   author: 'Robin DiAngelo',
@@ -16,8 +15,6 @@ const secondBook = {
   author: 'Harper Lee',
   title: 'To Kill A Mockingbird'
 };
-// refactored previous variables into objects that can be passed
-// this will allow to setup proper props
 
 function BookList() {
   return (
@@ -27,21 +24,18 @@ function BookList() {
     </section>
   );
 }
-// bookImage={} is the property value which will be equal to
-// {firstBook.bookImage} which is the object name-value pair
 
-const Book = (props) => {
-  console.log(props);
+const Book = ({bookImage, title, author}) => {
+  // const {bookImage, title, author} = props;
+
   return (
     <article className="book">
-      <img src={props.bookImage} alt="" />
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={bookImage} alt="" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
     </article>
   );
 };
-// make sure the props you are passing match within the component
-// ultimately making this dynamic
-// props will refer to the object
+// you can destructure the object for a more simplier solution to pass them
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
