@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Simple List
-// a simplier approach for the objects below is putting them in an array
-// then you can iterate over that array for each object
+// Proper List
 
 const books = [
   {
@@ -20,19 +18,18 @@ const books = [
   }
 ];
 
-const names = ['john', 'peter', 'susan'];
-const newNames = names.map((name) => {
-  console.log(name);
-});
-console.log(newNames);
-// how can we wrap our javascript value in HTML?
-// you do that with a map method
-// map method will access each value in the array
-// the results will show each value console.log
-
 function BookList() {
-  return <section className="booklist">{names}</section>;
+  return (
+    <section className="booklist">
+      {books.map((book) => {
+        return 'hello';
+      })}
+    </section>
+  );
 }
+// the parameter will point to each and every object in the iteration
+// you will see that 'hello' is outputted twice
+// that's because you have two items in the book array with the purple curly braces
 
 const Book = (props) => {
   const {bookImage, title, author} = props;
