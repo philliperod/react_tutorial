@@ -19,12 +19,15 @@ const Book = () => {
   // which are within curly braces
   // rule that must apply:
   // using javascript in JSX, it must return a value and not a statement
+  // it must also use expressions in JSX
 
   return (
     <article className="book">
       <img src="https://m.media-amazon.com/images/I/81aY1lxk+9L._AC_UY436_FMwebp_QL65_.jpg" alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      {/* <p>{let example = 6}</p> */}
+      <p>{6 + 6}</p>
     </article>
   );
 };
