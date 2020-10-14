@@ -29,20 +29,20 @@ function BookList() {
     </section>
   );
 }
-// the children prop is everything that is rendered between opening/closing tag in a component
-// this example is displaying a description
 
-const Book = ({bookImage, title, author, children}) => {
-  // const {bookImage, title, author} = props;
+const Book = (props) => {
+  const {bookImage, title, author} = props;
+  console.log(props);
 
   return (
     <article className="book">
       <img src={bookImage} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      {children}
+      {props.children}
     </article>
   );
 };
+// alternate option with using prop children with dot notation
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
