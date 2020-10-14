@@ -1,27 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// *JSX Rules
-// *return single element
-// *div / section / article or fragment
-// *use camelCase for html attribute
-// *className instead of class
-// *close every element
-// formatting
+// Nested Components
+// React Tools
 
 function Greeting() {
   return (
-    <div className="proper__class">
-      <h3>Hello World</h3>
-      <ul>
-        <li>
-          <a href="#">Hello Moon</a>
-        </li>
-        <img src="" alt="" />
-      </ul>
+    <div>
+      <Person />
+      <Message />
     </div>
   );
 }
-// add the self-closing tag to prevent an error for your component
+
+// how to use nested components (traditional way)
+// you can create multiple functions/components
+// and insert them like an html tag like above; MUST use self-closing tags
+
+const Person = () => <h2>Phil Rod</h2>;
+const Message = () => {
+  return <p>This is my message</p>;
+};
 
 ReactDOM.render(<Greeting />, document.getElementById('root'));
