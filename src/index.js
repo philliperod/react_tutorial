@@ -22,14 +22,18 @@ function BookList() {
   return (
     <section className="booklist">
       {books.map((book) => {
-        return 'hello';
+        const {bookImage, title, author} = book;
+        return (
+          <div>
+            <h3>{title}</h3>
+            <h6>{author}</h6>
+          </div>
+        );
       })}
     </section>
   );
 }
-// the parameter will point to each and every object in the iteration
-// you will see that 'hello' is outputted twice
-// that's because you have two items in the book array with the purple curly braces
+// alternate option with destructuring the array
 
 const Book = (props) => {
   const {bookImage, title, author} = props;
