@@ -1,25 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Nested Components
-// React Tools
+// Mini Book Project
+// recreating part of Amazon best seller books listing
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book />
+    </section>
   );
 }
+// this will be the first component that will handle the section of the book listing
+// it will have multiple components inside that will display each part of the listing such as:
+// book, image, title, author
 
-// how to use nested components (traditional way)
-// you can create multiple functions/components
-// and insert them like an html tag like above; MUST use self-closing tags
-
-const Person = () => <h2>Phil Rod</h2>;
-const Message = () => {
-  return <p>This is my message</p>;
+const Book = () => {
+  return <article>This is a book.</article>;
 };
+// this is the second component that will handle the book nested inside the first component
 
-ReactDOM.render(<Greeting />, document.getElementById('root'));
+ReactDOM.render(<BookList />, document.getElementById('root'));
