@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// CSS
+import './index.css';
+// this is the relative path and states the file sits in the same folder
+
+// CSS Basics
 
 function BookList() {
   return (
