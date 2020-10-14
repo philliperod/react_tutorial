@@ -21,6 +21,14 @@ const books = [
 ];
 
 const names = ['john', 'peter', 'susan'];
+const newNames = names.map((name) => {
+  console.log(name);
+});
+console.log(newNames);
+// how can we wrap our javascript value in HTML?
+// you do that with a map method
+// map method will access each value in the array
+// the results will show each value console.log
 
 function BookList() {
   return <section className="booklist">{names}</section>;
