@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Props Children
-// special property
-// located inbetween the HTML tags
-// displays whatever you put between those tags when invoking a component
+// Simple List
+// a simplier approach for the objects below is putting them in an array
+// then you can iterate over that array for each object
 
 const firstBook = {
   bookImage: 'https://m.media-amazon.com/images/I/81V8ozIJTVL._AC_UY436_FMwebp_QL65_.jpg',
@@ -22,27 +21,26 @@ const secondBook = {
 function BookList() {
   return (
     <section className="booklist">
-      <Book bookImage={firstBook.bookImage} title={firstBook.title} author={firstBook.author}>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </Book>
+      <Book bookImage={firstBook.bookImage} title={firstBook.title} author={firstBook.author} />
+
       <Book bookImage={secondBook.bookImage} title={secondBook.title} author={secondBook.author} />
     </section>
   );
 }
 
 const Book = (props) => {
-  const {bookImage, title, author} = props;
-  console.log(props);
+  // const {bookImage, title, author} = props;
+  const {bookImage, title, author, children} = props;
 
   return (
     <article className="book">
       <img src={bookImage} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      {props.children}
+      {/* {props.children} */}
+      {children}
     </article>
   );
 };
-// alternate option with using prop children with dot notation
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
