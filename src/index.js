@@ -11,13 +11,18 @@ function BookList() {
     </section>
   );
 }
-// this will be the first component that will handle the section of the book listing
-// it will have multiple components inside that will display each part of the listing such as:
-// book, image, title, author
+// book list component that has a nested book component which nest a book image component
 
 const Book = () => {
-  return <article>This is a book.</article>;
+  return (
+    <article>
+      <BookImage></BookImage>
+    </article>
+  );
 };
-// this is the second component that will handle the book nested inside the first component
+// book component that has a nested book image component
+
+const BookImage = () => <img src="https://m.media-amazon.com/images/I/81aY1lxk+9L._AC_UY436_FMwebp_QL65_.jpg" alt="" />;
+// book image component
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
