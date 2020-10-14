@@ -23,7 +23,7 @@ function BookList() {
 
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <BookImage />
       <Title />
       <Author />
