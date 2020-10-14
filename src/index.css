@@ -11,10 +11,15 @@ body {
   color: #222;
 }
 
-h1 {
-  color: red;
+.booklist {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
 }
-
-h4 {
-  color: red;
+@media screen and (min-width: 768px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

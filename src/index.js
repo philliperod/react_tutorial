@@ -5,10 +5,17 @@ import './index.css';
 // this is the relative path and states the file sits in the same folder
 
 // CSS Basics
+// add CSS is no different than doing it the standard way
+// in this example, using CSS grid
 
 function BookList() {
   return (
-    <section>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
       <Book />
     </section>
   );
