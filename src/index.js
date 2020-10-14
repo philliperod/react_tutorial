@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './index.css';
-// this is the relative path and states the file sits in the same folder
 
-// CSS Basics
-// add CSS is no different than doing it the standard way
-// in this example, using CSS grid
+// CSS JSX
 
 function BookList() {
   return (
