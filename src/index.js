@@ -2,22 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Proper List
+// Kep Prop & Spread Operator
+// React always want to keep a track of what is being add or remove
+// every time you have list, you need to add a key prop for each item that is returned
+// you need to setup a key prop with a unique values
 
 const listings = [
   {
+    id: 1,
     bookImage: 'https://m.media-amazon.com/images/I/81V8ozIJTVL._AC_UY436_FMwebp_QL65_.jpg',
     title: 'White Fragility',
     author: 'Robin DiAngelo'
   },
 
   {
+    id: 2,
     bookImage: 'https://m.media-amazon.com/images/I/81aY1lxk+9L._AC_UY436_FMwebp_QL65_.jpg',
     title: 'To Kill A Mockingbird',
     author: 'Harper Lee'
   },
 
   {
+    id: 3,
     bookImage: 'https://m.media-amazon.com/images/I/71LPo9FucCL._AC_UY436_FMwebp_QL65_.jpg',
     title: 'Of Mice and Men',
     author: 'John Steinbeck'
@@ -42,19 +48,11 @@ function BookList() {
   return (
     <section className="booklist">
       {listings.map((book) => {
-        return <Book book={book}></Book>;
+        return <Book key={listings.id} book={book}></Book>;
       })}
     </section>
   );
 }
-// question to ask is how to pass in the props now in BookList to show on our page?
-// one is individually adding each prop in the Book component in BookListing
-// REMINDER that you already destructured the object in the Book component
-// so instead of passing each prop one by one in another object created in the map method
-// you can pass a book prop that will equal to a book
-// you were looking for the book object and pass it as a prop within the BookList
-// in your Book component, props will have the properties as the value and
-// just setup the props and the property you are looking for - props.book
-// now you are iterating over your array and for each object you're returning that Book component
+// how to access it is simply entering the array with its key value
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
