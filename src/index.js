@@ -44,18 +44,17 @@ const Book = ({bookImage, title, author}) => {
       <h1>{title}</h1>
       <h4>{author}</h4>
       <button type="button" onClick={clickHandler}>
-        Reference Example
+        Reference Examples
       </button>
-      <button type="button" onClick={complexHandler(author)}>
-        Complex Example
+      <button type="button" onClick={() => complexHandler(author)}>
+        Complex Examples
       </button>
     </article>
   );
 };
-// how to setup an eventListener
-// you need to setup the attribute and eventHandler
-// must be in camelCase - onClick, onMouseOver
-// you can pass the eventHandlers as a reference (setting it up as a function) or inline
+// you can setup a inline function for a reference function
+// to make sure it only invokes that function once the even happens
+// the inline function will prevent the automatical run of the complex reference function
 
 function BookList() {
   return (
