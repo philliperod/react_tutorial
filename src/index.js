@@ -2,10 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Kep Prop & Spread Operator
-// React always want to keep a track of what is being add or remove
-// every time you have list, you need to add a key prop for each item that is returned
-// you need to setup a key prop with a unique values
+// Event Basics
 
 const listings = [
   {
@@ -49,9 +46,5 @@ function BookList() {
     </section>
   );
 }
-// using spread operator to pass the probs/name-value pairs
-// without using another prop that will equal a prop object 'book={book}'
-// you can remove the prop and use the spread operator in the prop object
-// and to refactor more you can use the destructure object in the parameters of the Book component
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
