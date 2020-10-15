@@ -31,13 +31,23 @@ const Book = ({bookImage, title, author}) => {
   const clickHandler = () => {
     alert('hello world');
   };
+  const complexHandler = (author) => {
+    console.log(author);
+  };
+  // if you're looking to pass a particular object then you can insert it as a parameter
+  // what happens as of right now, you invoke the function and it will output all values
+  // for that property
+
   return (
     <article className="book">
       <img src={bookImage} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
       <button type="button" onClick={clickHandler}>
-        Submit
+        Reference Example
+      </button>
+      <button type="button" onClick={complexHandler(author)}>
+        Complex Example
       </button>
     </article>
   );
