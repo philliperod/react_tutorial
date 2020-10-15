@@ -32,17 +32,18 @@ const Book = ({bookImage, title, author}) => {
     console.log(event);
     console.log(event.target);
   };
-  // in all of the functions and event handlers, you can access the event object
-  // you'll have the event object in the parameter then go for the event target
+
   const complexHandler = (author) => {
     console.log(author);
   };
-  // if you're looking to pass a particular object then you can insert it as a parameter
-  // what happens as of right now, you invoke the function and it will output all values
-  // for that property
 
   return (
-    <article className="book">
+    <article
+      className="book"
+      onMouseOver={() => {
+        console.log(title);
+      }}
+    >
       <img src={bookImage} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
