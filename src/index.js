@@ -25,7 +25,9 @@ const listings = [
 ];
 
 const Book = (props) => {
-  const {bookImage, title, author} = props;
+  console.log(props);
+
+  const {bookImage, title, author} = props.book;
 
   return (
     <article className="book">
@@ -40,21 +42,19 @@ function BookList() {
   return (
     <section className="booklist">
       {listings.map((book) => {
-        const {bookImage, title, author} = book;
-        return (
-          <div>
-            <img src={bookImage} alt="" />≈<h3>{title}</h3>
-            <h6>{author}</h6>
-          </div>
-        );
-        // return <Book book={book}></Book>;
+        return <Book book={book}></Book>;
       })}
     </section>
   );
 }
-// question to ask: how to pass the Book(props) in BookList?
-// previously, you could destructure another object in BookList
-// which would be in listings.map(book) which would equal book
-// then use those props inbetween html tags within curly braces
+// question to ask is how to pass in the props now in BookList to show on our page?
+// one is individually adding each prop in the Book component in BookListing
+// REMINDER that you already destructured the object in the Book component
+// so instead of passing each prop one by one in another object created in the map method
+// you can pass a book prop that will equal to a book
+// you were looking for the book object and pass it as a prop within the BookList
+// in your Book component, props will have the properties as the value and
+// just setup the props and the property you are looking for - props.book
+// now you are iterating over your array and for each object you're returning that Book component
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
