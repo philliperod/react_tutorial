@@ -28,9 +28,12 @@ const listings = [
 ];
 
 const Book = ({bookImage, title, author}) => {
-  const clickHandler = () => {
-    alert('hello world');
+  const clickHandler = (event) => {
+    console.log(event);
+    console.log(event.target);
   };
+  // in all of the functions and event handlers, you can access the event object
+  // you'll have the event object in the parameter then go for the event target
   const complexHandler = (author) => {
     console.log(author);
   };
@@ -52,9 +55,6 @@ const Book = ({bookImage, title, author}) => {
     </article>
   );
 };
-// you can setup a inline function for a reference function
-// to make sure it only invokes that function once the even happens
-// the inline function will prevent the automatical run of the complex reference function
 
 function BookList() {
   return (
