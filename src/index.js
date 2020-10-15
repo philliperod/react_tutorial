@@ -28,14 +28,24 @@ const listings = [
 ];
 
 const Book = ({bookImage, title, author}) => {
+  const clickHandler = () => {
+    alert('hello world');
+  };
   return (
     <article className="book">
       <img src={bookImage} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      <button type="button" onClick={clickHandler}>
+        Submit
+      </button>
     </article>
   );
 };
+// how to setup an eventListener
+// you need to setup the attribute and eventHandler
+// must be in camelCase - onClick, onMouseOver
+// you can pass the eventHandlers as a reference (setting it up as a function) or inline
 
 function BookList() {
   return (
