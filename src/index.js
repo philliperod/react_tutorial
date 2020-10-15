@@ -30,11 +30,7 @@ const listings = [
   }
 ];
 
-const Book = (props) => {
-  console.log(props);
-
-  const {bookImage, title, author} = props.book;
-
+const Book = ({bookImage, title, author}) => {
   return (
     <article className="book">
       <img src={bookImage} alt="" />
@@ -48,11 +44,14 @@ function BookList() {
   return (
     <section className="booklist">
       {listings.map((book) => {
-        return <Book key={listings.id} book={book}></Book>;
+        return <Book key={listings.id} {...book}></Book>;
       })}
     </section>
   );
 }
-// how to access it is simply entering the array with its key value
+// using spread operator to pass the probs/name-value pairs
+// without using another prop that will equal a prop object 'book={book}'
+// you can remove the prop and use the spread operator in the prop object
+// and to refactor more you can use the destructure object in the parameters of the Book component
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
